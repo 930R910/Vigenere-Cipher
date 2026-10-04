@@ -64,6 +64,7 @@ Every permutation is stored as a list `p` meaning `new[j] = old[p[j]]`.
 To undo it, every character is put back where it came from: `old[p[j]] = new[j]`.
 The Vigenère shift is subtracted instead of added.
 
+Decryption only works with the same keys, in the same order, that were used to encrypt.
 Decryption goes through the rounds backwards, and inside each round the steps are undone in reverse order:
 
 ```
@@ -71,4 +72,18 @@ ciphertext → undo rows → undo columns → undo Vigenère    (last round)
            → undo rows → undo columns → undo Vigenère    (round before)
            → ... → plaintext
 ```
-Decryption only works with the same keys, in the same order, that were used to encrypt.
+
+Example test cases (encryption and decryption)
+Test 1: two rounds
+Round 1: keyword `LEMON`, columns `3142`, rows `21`
+Round 2: keyword `KEY`, columns `2413`, rows `21`
+Stage	Result
+Plaintext	`ATTACK AT DAWN`
+Round 1 Vigenère	`LXFOPV EF RNHR`
+Round 1 Columns	`XV ROENLPFHF R`
+Round 1 Rows	`OENLXV RPFHF R`
+Round 2 Vigenère	`YILVBT BTDRJ P`
+Round 2 Columns	`L RYBT VBJITDP`
+Round 2 Rows	`BT VL RYBJITDP`
+Ciphertext (hex)	`425420564c205259424a49544450`
+Decrypted with the same keys	`ATTACK AT DAWN`
