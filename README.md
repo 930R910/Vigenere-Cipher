@@ -73,7 +73,7 @@ ciphertext → undo rows → undo columns → undo Vigenère    (last round)
            → ... → plaintext
 ```
 
-## Example test cases (encryption and decryption)
+## Example test case (encryption and decryption)
 
 **Test**
 Round 1: keyword `LEMON`, columns `3142`, rows `21`
