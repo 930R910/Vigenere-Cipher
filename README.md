@@ -73,14 +73,24 @@ ciphertext → undo rows → undo columns → undo Vigenère    (last round)
            → ... → plaintext
 ```
 
-Example test cases (encryption and decryption)
-Test 1: two rounds
+## Example test cases (encryption and decryption)
+
+**Test**
 Round 1: keyword `LEMON`, columns `3142`, rows `21`
 Round 2: keyword `KEY`, columns `2413`, rows `21`
-Stage	Result
-Plaintext	`ATTACK AT DAWN`
-Round 1 Vigenère	`LXFOPV EF RNHR`
-Round 1 Columns	`XV ROENLPFHF R`
+
+| Stage | Result |
+|---|---|
+| Plaintext | `ATTACK AT DAWN` |
+| Round 1 Vigenère | `LXFOPV EF RNHR` |
+| Round 1 Columns | `XV ROENLPFHF R` |
+| Round 1 Rows | `OENLXV RPFHF R` |
+| Round 2 Vigenère | `YILVBT BTDRJ P` |
+| Round 2 Columns | `L RYBT VBJITDP` |
+| Round 2 Rows | `BT VL RYBJITDP` |
+| **Ciphertext (hex)** | `425420564c205259424a49544450` |
+| **Decrypted with the same keys** | `ATTACK AT DAWN` |
+
 Round 1 Rows	`OENLXV RPFHF R`
 Round 2 Vigenère	`YILVBT BTDRJ P`
 Round 2 Columns	`L RYBT VBJITDP`
