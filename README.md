@@ -90,5 +90,3 @@ Round 2: keyword `KEY`, columns `2413`, rows `21`
 | Round 2 Rows | `BT VL RYBJITDP` |
 | **Ciphertext (hex)** | `425420564c205259424a49544450` |
 | **Decrypted with the same keys** | `ATTACK AT DAWN` |
-4450`
-Decrypted with the same keys	`ATTACK AT DAWN`
